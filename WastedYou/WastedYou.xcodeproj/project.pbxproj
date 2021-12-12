@@ -132,7 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				38503DDF2765E72300C62583 /* Map */,
-				38503DDE2765E70800C62583 /* Letter */,
+				38503DDE2765E70800C62583 /* Message */,
 				38503DDC2765E63700C62583 /* Top */,
 			);
 			path = Controllers;
@@ -145,11 +145,11 @@
 			path = Top;
 			sourceTree = "<group>";
 		};
-		38503DDE2765E70800C62583 /* Letter */ = {
+		38503DDE2765E70800C62583 /* Message */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Letter;
+			path = Message;
 			sourceTree = "<group>";
 		};
 		38503DDF2765E72300C62583 /* Map */ = {
