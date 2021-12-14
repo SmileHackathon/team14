@@ -8,10 +8,20 @@
 import UIKit
 
 class TopViewController: UIViewController {
-
+    
+    @IBOutlet weak var myLabel_haikei: UILabel!
+    @IBOutlet weak var my_Label_yoitubure: UILabel!
+    @IBOutlet weak var StartButton_trg: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        myLabel_haikei.text = "拝啓"
+        my_Label_yoitubure.text = "〜酔い潰れた君へ〜"
+        
+        StartButton_trg.setTitle("START", for: .normal)
+        StartButton_trg.titleLabel?.font = UIFont.systemFont(ofSize: 70)
+        StartButton_trg.titleLabel?.adjustsFontSizeToFitWidth = true
         // Do any additional setup after loading the view.
     }
     
