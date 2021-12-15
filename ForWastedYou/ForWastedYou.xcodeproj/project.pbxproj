@@ -19,6 +19,7 @@
 		38698B752765F11400A72E83 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38698B742765F11400A72E83 /* TopViewController.swift */; };
 		38698B772765F12100A72E83 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38698B762765F12100A72E83 /* MapViewController.swift */; };
 		38698B792765F13A00A72E83 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38698B782765F13A00A72E83 /* MessageViewController.swift */; };
+		387F4B3B276AA1A200A41154 /* MessageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 387F4B3A276AA1A200A41154 /* MessageViewController.storyboard */; };
 		82ADE4C62765FD870071420E /* TopViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82ADE4C52765FD870071420E /* TopViewController.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		38698B742765F11400A72E83 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TopViewController.swift; path = /Users/matsubara/Desktop/smhack/team14/ForWastedYou/ForWastedYou/Controllers/Top/TopViewController.swift; sourceTree = "<absolute>"; };
 		38698B762765F12100A72E83 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		38698B782765F13A00A72E83 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		387F4B3A276AA1A200A41154 /* MessageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MessageViewController.storyboard; sourceTree = "<group>"; };
 		82ADE4C52765FD870071420E /* TopViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TopViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				38698B782765F13A00A72E83 /* MessageViewController.swift */,
+				387F4B3A276AA1A200A41154 /* MessageViewController.storyboard */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -275,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				387F4B3B276AA1A200A41154 /* MessageViewController.storyboard in Resources */,
 				38698B4D2765EFDC00A72E83 /* LaunchScreen.storyboard in Resources */,
 				82ADE4C62765FD870071420E /* TopViewController.storyboard in Resources */,
 				38698B4A2765EFDC00A72E83 /* Assets.xcassets in Resources */,
