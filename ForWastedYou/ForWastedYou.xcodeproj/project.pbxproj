@@ -54,7 +54,7 @@
 		38698B5D2765EFDC00A72E83 /* ForWastedYouUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForWastedYouUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38698B612765EFDC00A72E83 /* ForWastedYouUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForWastedYouUITests.swift; sourceTree = "<group>"; };
 		38698B632765EFDC00A72E83 /* ForWastedYouUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForWastedYouUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		38698B742765F11400A72E83 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TopViewController.swift; path = /Users/matsubara/Desktop/smhack/team14/ForWastedYou/ForWastedYou/Controllers/Top/TopViewController.swift; sourceTree = "<absolute>"; };
+		38698B742765F11400A72E83 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		38698B762765F12100A72E83 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		38698B782765F13A00A72E83 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		387F4B3A276AA1A200A41154 /* MessageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MessageViewController.storyboard; sourceTree = "<group>"; };
