@@ -8,7 +8,7 @@
 import UIKit
 
 class TopViewController: UIViewController {
-    
+    //UILabelの変数宣言は、Titleにて使用
     @IBOutlet weak var myLabel_haikei: UILabel!
     @IBOutlet weak var my_Label_yoitubure: UILabel!
     @IBOutlet weak var StartButton_trg: UIButton!
@@ -16,9 +16,11 @@ class TopViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //haikeiとyoitubureはTitleにて使用
         myLabel_haikei.text = "拝啓"
         my_Label_yoitubure.text = "〜酔い潰れた君へ〜"
         
+        //StartButtonの設定
         StartButton_trg.setTitle("START", for: .normal)
         StartButton_trg.titleLabel?.font = UIFont.systemFont(ofSize: 70)
         StartButton_trg.titleLabel?.adjustsFontSizeToFitWidth = true
