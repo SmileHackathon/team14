@@ -1,0 +1,12 @@
+version: "Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)"
+options: "7c210285ad91bfaec743ad1cdc75c0a36a39d4994ee93a2203d801d0d6081829"
+build_start_time: [1639403627, 426548004]
+build_end_time: [1639403627, 880549907]
+inputs:
+  "/Users/satoshitoyota/Desktop/team14/ForWastedYou/ForWastedYou/AppDelegate.swift": [1639303682, 456255912]
+  "/Users/satoshitoyota/Desktop/team14/ForWastedYou/ForWastedYou/Controllers/Map/MapViewController.swift": [1639402478, 384514331]
+  "/Users/satoshitoyota/Desktop/team14/ForWastedYou/ForWastedYou/Controllers/Map/Practice.swift": [1639395699, 530700683]
+  "/Users/satoshitoyota/Desktop/team14/ForWastedYou/ForWastedYou/Controllers/Message/MessageViewController.swift": [1639303682, 457662582]
+  "/Users/satoshitoyota/Desktop/team14/ForWastedYou/ForWastedYou/Controllers/Top/TopViewController.swift": [1639303682, 457845926]
+  "/Users/satoshitoyota/Desktop/team14/ForWastedYou/ForWastedYou/SceneDelegate.swift": [1639303682, 458132982]
+  "/Users/satoshitoyota/Desktop/team14/ForWastedYou/ForWastedYou/ViewController.swift": [1639303682, 458263397]
