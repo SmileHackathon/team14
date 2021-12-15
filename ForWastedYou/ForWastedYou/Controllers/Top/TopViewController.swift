@@ -11,7 +11,11 @@ class TopViewController: UIViewController {
     //UILabelの変数宣言は、Titleにて使用
     @IBOutlet weak var myLabel_haikei: UILabel!
     @IBOutlet weak var my_Label_yoitubure: UILabel!
-    @IBOutlet weak var StartButton_trg: UIButton!
+    @IBOutlet weak var TitleMenu: UILabel!
+    
+    @IBOutlet weak var TitileSTART: UIButton!
+    @IBOutlet weak var TItleINF: UIButton!
+    @IBOutlet weak var TitleHELP: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,11 +23,13 @@ class TopViewController: UIViewController {
         //haikeiとyoitubureはTitleにて使用
         myLabel_haikei.text = "拝啓"
         my_Label_yoitubure.text = "〜酔い潰れた君へ〜"
+        TitleMenu.text = "本日のお品書き"
         
-        //StartButtonの設定
-        StartButton_trg.setTitle("START", for: .normal)
-        StartButton_trg.titleLabel?.font = UIFont.systemFont(ofSize: 70)
-        StartButton_trg.titleLabel?.adjustsFontSizeToFitWidth = true
+        //TitleButtonの設定
+        TitileSTART.titleLabel!.font = UIFont(name: ".SFNS-Regular",size: CGFloat(30))
+        TItleINF?.titleLabel!.font = UIFont(name: ".SFNS-Regular",size: CGFloat(30))
+        TitleHELP?.titleLabel!.font = UIFont(name: ".SFNS-Regular",size: CGFloat(30))
+
         // Do any additional setup after loading the view.
     }
     
