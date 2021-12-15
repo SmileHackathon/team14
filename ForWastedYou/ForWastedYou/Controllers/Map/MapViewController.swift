@@ -29,7 +29,6 @@ class MapViewController: UIViewController , CLLocationManagerDelegate {
     ]
     //座標の配列
 // 直線を引く座標を作成.
-
         let coordinate_1 = CLLocationCoordinate2D(latitude: 37.301741, longitude: -122.050333)
 
         let coordinate_2 = CLLocationCoordinate2D(latitude: 37.351951, longitude: -122.020314)
@@ -56,7 +55,6 @@ class MapViewController: UIViewController , CLLocationManagerDelegate {
         var coordinates_2 = [coordinate_3, coordinate_4]
         
         // polyline作成.
-
         let myPolyLine_1: MKPolyline = MKPolyline(coordinates: &coordinates_1, count: coordinates_1.count)
 
         let myPolyLine_2: MKPolyline = MKPolyline(coordinates: &coordinates_2, count: coordinates_2.count)
@@ -77,10 +75,10 @@ class MapViewController: UIViewController , CLLocationManagerDelegate {
  
             // 位置情報の取得を開始
             locationManager.startUpdatingLocation()
+
         }
     }
                 
-            
     func locationManager(_ manager: CLLocationManager,
                 didUpdateLocations locations: [CLLocation]) {
         // 最初のデータ
@@ -97,13 +95,6 @@ class MapViewController: UIViewController , CLLocationManagerDelegate {
             pin.coordinate = coordinate
             mapView.addAnnotation(pin)
 //            // mapViewにcircleを追加.
-//            myMapView.addOverlay(myPolyLine_1)
-//
-//            myMapView.addOverlay(myPolyLine_2)
-//            for i in 0..<2 {
-//                        let annotation = MKPointAnnotation()
-//                        annotation.title = coordinatesArray[i]["name"] as? String
-//                    }
             // 現在地を拡大して表示する
             let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
             let region = MKCoordinateRegion(center: coordinate, span: span)
@@ -124,7 +115,6 @@ class MapViewController: UIViewController , CLLocationManagerDelegate {
 
             var coordinates_2 = [coordinate_3, coordinate_4]
 
-        
             // polyline作成.
 
             let myPolyLine_1: MKPolyline = MKPolyline(coordinates: &coordinates_1, count: coordinates_1.count)
@@ -144,7 +134,6 @@ class MapViewController: UIViewController , CLLocationManagerDelegate {
         self.locationManager.distanceFilter = 100;
         
         // 自動で位置情報取得がOFFになるのを防ぐ
-        
         print("latitude: \(latitude!)")
         print("longitude: \(longitude!)")
         
@@ -155,36 +144,20 @@ class MapViewController: UIViewController , CLLocationManagerDelegate {
         super.didReceiveMemoryWarning()
 
     }
-
-    
-
     /*
-
     addOverlayした際に呼ばれるデリゲートメソッド.
-
     */
 
     func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
 
-        
-
         // rendererを生成.
-
         let myPolyLineRendere: MKPolylineRenderer = MKPolylineRenderer(overlay: overlay)
 
-        
-
         // 線の太さを指定.
-
         myPolyLineRendere.lineWidth = 500
 
-        
-
         // 線の色を指定.
-
         myPolyLineRendere.strokeColor = UIColor.systemRed
-
-        
 
         return myPolyLineRendere
     }
@@ -197,5 +170,4 @@ class MapViewController: UIViewController , CLLocationManagerDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
