@@ -4,6 +4,7 @@ xcuserdata/
 
 *.xcscmblueprint
 *.xccheckout
+*.xcuserstate 
 
 build/
 DerivedData/
