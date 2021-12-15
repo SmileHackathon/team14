@@ -19,11 +19,7 @@
 		38698B752765F11400A72E83 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38698B742765F11400A72E83 /* TopViewController.swift */; };
 		38698B772765F12100A72E83 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38698B762765F12100A72E83 /* MapViewController.swift */; };
 		38698B792765F13A00A72E83 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38698B782765F13A00A72E83 /* MessageViewController.swift */; };
-		828A83FE2767577000C4AC99 /* A.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 828A83FD2767577000C4AC99 /* A.storyboard */; };
-		828A84002767578100C4AC99 /* B.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 828A83FF2767578100C4AC99 /* B.storyboard */; };
 		82ADE4C62765FD870071420E /* TopViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 82ADE4C52765FD870071420E /* TopViewController.storyboard */; };
-		82E872822767A6D600815116 /* IBUS458A2363.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 82E872812767A6D600815116 /* IBUS458A2363.jpg */; };
-		82E872862767AA0800815116 /* background_bar_title.png in Resources */ = {isa = PBXBuildFile; fileRef = 82E872852767AA0800815116 /* background_bar_title.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,11 +56,7 @@
 		38698B742765F11400A72E83 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TopViewController.swift; path = /Users/matsubara/Desktop/smhack/team14/ForWastedYou/ForWastedYou/Controllers/Top/TopViewController.swift; sourceTree = "<absolute>"; };
 		38698B762765F12100A72E83 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		38698B782765F13A00A72E83 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
-		828A83FD2767577000C4AC99 /* A.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = A.storyboard; sourceTree = "<group>"; };
-		828A83FF2767578100C4AC99 /* B.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = B.storyboard; sourceTree = "<group>"; };
 		82ADE4C52765FD870071420E /* TopViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TopViewController.storyboard; sourceTree = "<group>"; };
-		82E872812767A6D600815116 /* IBUS458A2363.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = IBUS458A2363.jpg; path = ../../../../../../../Downloads/IBUS458A2363.jpg; sourceTree = "<group>"; };
-		82E872852767AA0800815116 /* background_bar_title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background_bar_title.png; path = ../../../../../../background_bar_title.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,10 +151,6 @@
 			children = (
 				38698B742765F11400A72E83 /* TopViewController.swift */,
 				82ADE4C52765FD870071420E /* TopViewController.storyboard */,
-				828A83FD2767577000C4AC99 /* A.storyboard */,
-				828A83FF2767578100C4AC99 /* B.storyboard */,
-				82E872812767A6D600815116 /* IBUS458A2363.jpg */,
-				82E872852767AA0800815116 /* background_bar_title.png */,
 			);
 			path = Top;
 			sourceTree = "<group>";
@@ -287,13 +275,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				82E872862767AA0800815116 /* background_bar_title.png in Resources */,
 				38698B4D2765EFDC00A72E83 /* LaunchScreen.storyboard in Resources */,
-				828A84002767578100C4AC99 /* B.storyboard in Resources */,
-				82E872822767A6D600815116 /* IBUS458A2363.jpg in Resources */,
 				82ADE4C62765FD870071420E /* TopViewController.storyboard in Resources */,
 				38698B4A2765EFDC00A72E83 /* Assets.xcassets in Resources */,
-				828A83FE2767577000C4AC99 /* A.storyboard in Resources */,
 				38698B482765EFDA00A72E83 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,6 +495,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = TopViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -539,6 +524,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = TopViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
