@@ -106,10 +106,10 @@
         <!--Storyboard Reference-->
         <scene sceneID="fkK-mL-uMk">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UYn-ME-cpo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder id="6qP-T4-4p2" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="S8g-LY-XLA"/>
                 </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UYn-ME-cpo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1298" y="-730"/>
         </scene>
