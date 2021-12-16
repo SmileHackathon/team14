@@ -19,6 +19,8 @@
 		38698B752765F11400A72E83 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38698B742765F11400A72E83 /* TopViewController.swift */; };
 		38698B772765F12100A72E83 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38698B762765F12100A72E83 /* MapViewController.swift */; };
 		38698B792765F13A00A72E83 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38698B782765F13A00A72E83 /* MessageViewController.swift */; };
+		387F4B43276B208C00A41154 /* MessageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 387F4B42276B208C00A41154 /* MessageViewController.storyboard */; };
+		387F4B45276B20A100A41154 /* TopViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 387F4B44276B20A100A41154 /* TopViewController.storyboard */; };
 		5083B57E276601B300B6D121 /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5083B57D276601B300B6D121 /* MapViewController.storyboard */; };
 		5083B5852767786500B6D121 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5083B5842767786500B6D121 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
@@ -57,6 +59,8 @@
 		38698B742765F11400A72E83 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		38698B762765F12100A72E83 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		38698B782765F13A00A72E83 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		387F4B42276B208C00A41154 /* MessageViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MessageViewController.storyboard; path = ../../../../../../team14/ForWastedYou/ForWastedYou/Controllers/Message/MessageViewController.storyboard; sourceTree = "<group>"; };
+		387F4B44276B20A100A41154 /* TopViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TopViewController.storyboard; path = ../../../../../../team14/ForWastedYou/ForWastedYou/Controllers/Top/TopViewController.storyboard; sourceTree = "<group>"; };
 		5083B57D276601B300B6D121 /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
 		5083B5842767786500B6D121 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -154,6 +158,7 @@
 		38698B712765F07500A72E83 /* Top */ = {
 			isa = PBXGroup;
 			children = (
+				387F4B44276B20A100A41154 /* TopViewController.storyboard */,
 				38698B742765F11400A72E83 /* TopViewController.swift */,
 			);
 			path = Top;
@@ -162,6 +167,7 @@
 		38698B722765F08200A72E83 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				387F4B42276B208C00A41154 /* MessageViewController.storyboard */,
 				38698B782765F13A00A72E83 /* MessageViewController.swift */,
 			);
 			path = Message;
@@ -288,10 +294,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				387F4B43276B208C00A41154 /* MessageViewController.storyboard in Resources */,
 				5083B57E276601B300B6D121 /* MapViewController.storyboard in Resources */,
 				38698B4D2765EFDC00A72E83 /* LaunchScreen.storyboard in Resources */,
 				38698B4A2765EFDC00A72E83 /* Assets.xcassets in Resources */,
 				38698B482765EFDA00A72E83 /* Main.storyboard in Resources */,
+				387F4B45276B20A100A41154 /* TopViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
