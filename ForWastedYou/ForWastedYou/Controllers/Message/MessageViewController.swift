@@ -9,7 +9,6 @@ import UIKit
 
 class MessageViewController: UIViewController {
     
-    
     @IBOutlet weak var addTextButton: UIButton!
     
     override func viewDidLoad() {
