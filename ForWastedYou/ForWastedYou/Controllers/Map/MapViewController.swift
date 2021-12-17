@@ -100,13 +100,13 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
         self.view.addSubview( self.address )
         
         //ロケーションマネージャ
-        self.locationManager.requestWhenInUseAuthorization()
-        let status2 = CLLocationManager.authorizationStatus()
-        if status2 == .authorizedWhenInUse {
-            self.locationManager.delegate = self
-            self.locationManager.distanceFilter = 10
-            self.locationManager.startUpdatingLocation()
-        }
+//        self.locationManager.requestWhenInUseAuthorization()
+//        let status2 = CLLocationManager.authorizationStatus()
+//        if status2 == .authorizedWhenInUse {
+//            self.locationManager.delegate = self
+//            self.locationManager.distanceFilter = 10
+//            self.locationManager.startUpdatingLocation()
+//        }
         
         // スクリーンサイズの取得
         let screenW:CGFloat = view.frame.size.width
@@ -118,7 +118,7 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
         // 画像の縦横サイズを取得
         imageSample.center = CGPoint(x:screenW/2, y:9*screenH/10)
         // 設定した画像をスクリーンに表示する
-        self.view.addSubview(imageSample)
+//        self.view.addSubview(imageSample)
         
         
 //        // ボタンのサイズを定義.
@@ -154,7 +154,24 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
             locationManager.startUpdatingLocation()
             my_latitude = locationManager.location?.coordinate.latitude
             my_longitude = locationManager.location?.coordinate.longitude
+            
+            let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+            // 東京駅の位置情報をセット
+            let myposition = CLLocationCoordinate2DMake(my_latitude, my_longitude)
+            // centerに東京駅のlocationDataをセット
+            let region = MKCoordinateRegion(center: myposition, span: span)
+            mapView.setRegion(region, animated: true)
+            
+            
+            let pin = MKPointAnnotation()
+            pin.coordinate = myposition
+            mapView.addAnnotation(pin)
+            
+
             coordinates.append(CLLocationCoordinate2D(latitude: my_latitude, longitude: my_longitude))
+            
+            
+            self.view.addSubview(imageSample)
         }
     }
     //distanceFilterの値を超えたときに呼び出される
@@ -168,11 +185,16 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
         let longitude = location?.coordinate.longitude
         //更新データ
         guard let newLocation = locations.last,
+              
               //有効なデータか判別
               CLLocationCoordinate2DIsValid(newLocation.coordinate) else {
                   print("無効なデータ")
                   return
               }
+        if newLocation.speedAccuracy < 0{
+            print("無効なデータ")
+            return
+        }
         let time = dateformatter.string(from: newLocation.timestamp)
         print("時間time")
         print(time)
@@ -187,9 +209,9 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
         }
         else{
         }
-        let date = newLocation.timestamp
+//        let date = newLocation.timestamp
         print("日時")
-        print(date)
+//        print(date)
 //        let speed2 = newLocation.speed
         
 //        print("speedAccuracy:")
@@ -262,10 +284,10 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
             //      df.dateFormat = location_time
             //時速を表示
             if(booltax == 1){
-                pin.title = "【タクシーで移動中】時速" + String(hspeed) + "km"
+                pin.title = "【タクシーで移動中】時速" + String(hspeed) + "km" + time
             }
             else{
-                pin.title = "【徒歩で移動中】時速" +  String(hspeed) + "km"
+                pin.title = "【徒歩で移動中】時速" +  String(hspeed) + "km" + time
                 //pin.title = "【徒歩で移動中】時速" + time
             }
             //pin.title = "Hello"
