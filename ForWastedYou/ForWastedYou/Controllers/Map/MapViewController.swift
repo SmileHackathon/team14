@@ -13,6 +13,10 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
         let mapView = MKMapView(frame: view.frame)
         return mapView
     }()
+    
+    @IBOutlet weak var image1: UIImageView! // 画像
+    let imageSample = UIImageView()
+
     // 測位精度
     let locationAccuracy: [Double] = [
         kCLLocationAccuracyBestForNavigation,
@@ -28,6 +32,17 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
     var my_longitude: CLLocationDegrees!
     //位置情報を記録するための配列
     var coordinates:[CLLocationCoordinate2D]=[]
+    //飲んでいた位置文字列の定義
+    var startpoint : String = ""
+    //タクシーか徒歩の判断
+    var counttax = 0
+    
+    var dateformatter=DateFormatter()
+    let text = [ "緯度", "経度", "国名", "郵便番号", "都道府県", "郡", "市区町村", "丁番なしの地名", "地名", "番地" ]
+    let geocoder = CLGeocoder()
+    var location: [ UILabel ] = []
+    var address: UILabel!
+
     //  let df=DateFormatter()
     //
     //  var coordinate_lines:[[CLLocationCoordinate2D]]=[]
@@ -41,6 +56,14 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
         locationManager = CLLocationManager()
         // ユーザーの使用許可を確認
         locationManager.requestWhenInUseAuthorization()
+        
+        //データ
+       self.location.append( UILabel() )
+       self.location.last!.textAlignment = .center
+       self.view.addSubview( self.location.last! )
+        //サイズ
+       let width = self.view.frame.width / 2
+       let height = self.view.frame.height / CGFloat( self.text.count + 2 )
         //for文を作る。100m更新されたら配列を今の現在地に入れ替えて描画する
         //    let coordinate_2 = CLLocationCoordinate2D(latitude: 37.351951, longitude: 140.78720180)
         //
@@ -61,6 +84,66 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
         //    mapView.addOverlay(myPolyLine_1)
         //    mapView.addOverlay(myPolyLine_2)
         // 使用許可に対するステータス
+        
+        //ラベル
+        for ( i, text ) in self.text.enumerated() {
+            //データ
+            self.location.append( UILabel() )
+            self.location.last!.frame.size = CGSize( width: width, height: height )
+            self.location.last!.frame.origin = CGPoint( x: width, y: height * CGFloat( i + 1 ) )
+            self.location.last!.textAlignment = .center
+            self.view.addSubview( self.location.last! )
+        }
+        
+        self.address = UILabel()
+        self.address.frame.size = CGSize( width: self.view.frame.width, height: height )
+        self.address.frame.origin = CGPoint( x: -40, y: height * CGFloat( self.text.count + 1 )-40 )
+        self.address.textAlignment = .center
+        self.view.addSubview( self.address )
+        
+        //ロケーションマネージャ
+//        self.locationManager.requestWhenInUseAuthorization()
+//        let status2 = CLLocationManager.authorizationStatus()
+//        if status2 == .authorizedWhenInUse {
+//            self.locationManager.delegate = self
+//            self.locationManager.distanceFilter = 10
+//            self.locationManager.startUpdatingLocation()
+//        }
+        
+        // スクリーンサイズの取得
+        let screenW:CGFloat = view.frame.size.width
+        let screenH:CGFloat = view.frame.size.height
+        // 画像を読み込んで、準備しておいたimageSampleに設定
+        imageSample.image = UIImage(named: "girl3")
+        // 画像のフレームを設定
+        imageSample.frame = CGRect(x:0, y:0, width:screenW, height:150)
+        // 画像の縦横サイズを取得
+        imageSample.center = CGPoint(x:screenW/2, y:9*screenH/10)
+        // 設定した画像をスクリーンに表示する
+//        self.view.addSubview(imageSample)
+        
+        
+//        // ボタンのサイズを定義.
+//        let bWidth: CGFloat = 200
+//        let bHeight: CGFloat = 50
+//        // 配置する座標を定義
+//        let posX: CGFloat = 2
+//        let posY: CGFloat = 8*screenH/10
+//        // Labelを作成.
+//        let label: UILabel = UILabel(frame: CGRect(x: posX, y: posY, width: bWidth, height: bHeight))
+//        // 文字の色を白に定義.
+//        label.textColor = UIColor.black
+//        // UILabelに文字を代入.
+//        label.text = "飲んでいた場所"
+//        // 文字の影をグレーに定義.
+//        label.shadowColor = UIColor.gray
+//        // Textを中央寄せにする.
+//        label.textAlignment = NSTextAlignment.center
+//        // Viewの背景を青にする.
+//        self.view.backgroundColor = UIColor.cyan
+//        // ViewにLabelを追加.
+//        self.view.addSubview(label)
+        
         let status = CLLocationManager.authorizationStatus()
         if status == .authorizedWhenInUse {
             // delegateを設定
@@ -71,9 +154,28 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
             locationManager.distanceFilter = 100
             // 位置情報の取得を開始
             locationManager.startUpdatingLocation()
+            let time = DateFormatter.localizedString(from: locationManager.location!.timestamp, dateStyle: .short, timeStyle: .short)
             my_latitude = locationManager.location?.coordinate.latitude
             my_longitude = locationManager.location?.coordinate.longitude
+            
+            let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+            // 東京駅の位置情報をセット
+            let myposition = CLLocationCoordinate2DMake(my_latitude, my_longitude)
+            // centerに東京駅のlocationDataをセット
+            let region = MKCoordinateRegion(center: myposition, span: span)
+            mapView.setRegion(region, animated: true)
+            
+            
+            let pin = MKPointAnnotation()
+            pin.coordinate = myposition
+            pin.title = "これから飲み始めます！" + time
+            mapView.addAnnotation(pin)
+            
+
             coordinates.append(CLLocationCoordinate2D(latitude: my_latitude, longitude: my_longitude))
+            
+            
+            self.view.addSubview(imageSample)
         }
     }
     //distanceFilterの値を超えたときに呼び出される
@@ -87,13 +189,39 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
         let longitude = location?.coordinate.longitude
         //更新データ
         guard let newLocation = locations.last,
+              
               //有効なデータか判別
               CLLocationCoordinate2DIsValid(newLocation.coordinate) else {
                   print("無効なデータ")
                   return
               }
+        if newLocation.speedAccuracy < 0{
+            print("無効なデータ")
+            return
+        }
+        let time = DateFormatter.localizedString(from: newLocation.timestamp, dateStyle: .short, timeStyle: .short)
+        print("時間time")
+        print(time)
         //瞬間速度m/s
         let speed = newLocation.speed
+        //時速
+        let hspeed = round(speed * 3.6)
+        //タクシーか徒歩かの判断
+        var booltax = 0
+        if hspeed > 37.58{
+            booltax = 1
+        }
+        else{
+        }
+//        let date = newLocation.timestamp
+        print("日時")
+//        print(date)
+//        let speed2 = newLocation.speed
+        
+//        print("speedAccuracy:")
+//        print(speed)
+//        print("speed:")
+//        print(speed2)
         //現在と１つ前の地点の距離
         let distance = location!.distance(from: newLocation)
         print("新しい緯度と経度")
@@ -104,17 +232,97 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
         let old_coordinates=coordinates.last
         //位置情報を記録
         coordinates.append(CLLocationCoordinate2D(latitude:latitude!, longitude:longitude!))
+        
         //現在の位置情報を格納
         let new_coordinates=coordinates.last
         //    coordinate_lines.append([coordinates[coordinates.count-1],coordinates.last])
         //    let speed = old_coordinates.sp
+        
+        //飲んでいた場所を表示させる
+        self.geocoder.reverseGeocodeLocation(location!, completionHandler: { ( placemarks, error ) in
+            if let placemark = placemarks?.first {
+                let administrativeArea = placemark.administrativeArea == nil ? "" : placemark.administrativeArea!
+                let locality = placemark.locality == nil ? "" : placemark.locality!
+                let subLocality = placemark.subLocality == nil ? "" : placemark.subLocality!
+                let thoroughfare = placemark.thoroughfare == nil ? "" : placemark.thoroughfare!
+                let subThoroughfare = placemark.subThoroughfare == nil ? "" : placemark.subThoroughfare!
+                let placeName = !thoroughfare.contains( subLocality ) ? subLocality : thoroughfare
+                self.address.text = administrativeArea + locality + placeName + subThoroughfare
+                self.startpoint = self.startpoint + self.address.text!
+                //最前面に持ってくる
+                self.view.bringSubviewToFront(self.address)
+                //
+                
+            }
+        } )
+        
+        // スクリーンサイズの取得
+        let screenW:CGFloat = view.frame.size.width
+        let screenH:CGFloat = view.frame.size.height
+        // ボタンのサイズを定義.
+        let bWidth: CGFloat = 200
+        let bHeight: CGFloat = 50
+        // 配置する座標を定義
+        let posX: CGFloat = 2
+        let posY: CGFloat = 33*screenH/40
+        // Labelを作成.
+        let label: UILabel = UILabel(frame: CGRect(x: posX, y: posY, width: bWidth, height: bHeight))
+        // 文字の色を白に定義.
+        label.textColor = UIColor.black
+        // UILabelに文字を代入.
+        label.text = "飲んでいた場所"
+        
+        // Textを中央寄せにする.
+        label.textAlignment = NSTextAlignment.center
+        // Viewの背景を青にする.
+        self.view.backgroundColor = UIColor.cyan
+        // ViewにLabelを追加.
+        self.view.addSubview(label)
+        
+        // Labelを作成（タクシー）.
+        let label2: UILabel = UILabel(frame: CGRect(x: posX+20, y: posY+60, width: bWidth, height: bHeight))
+        // Labelを作成（徒歩）
+        let label3: UILabel = UILabel(frame: CGRect(x: posX+20, y: posY+60, width: bWidth, height: bHeight))
+        // 文字の色を定義.
+        label2.textColor = UIColor.black
+        label3.textColor = UIColor.black
+        // UILabelに文字を代入.
+        label2.text = "タクシーで帰りました！"
+        label3.text = "徒歩で帰りました！"
+        // Textを中央寄せにする.
+        label2.textAlignment = NSTextAlignment.center
+        label3.textAlignment = NSTextAlignment.center
+        // Viewの背景を青にする.
+        self.view.backgroundColor = UIColor.cyan
+
+        if (counttax > 3){
+            // ViewにLabelを追加.
+            self.view.addSubview(label2)
+        }
+        else{
+            self.view.addSubview(label3)
+        }
+
+                
         if let coordinate = locations.last?.coordinate {
             // ピンをつける
             let pin = MKPointAnnotation()
             pin.coordinate = coordinate
             //      df.dateFormat = location_time
-            pin.title = String(distance)
+            
+            //時速を表示
+            if(booltax == 1){
+                pin.title = "【タクシーで移動中】" + time
+                counttax += 1
+            }
+            
+            else{
+                pin.title = "【徒歩で移動中】" + time
+                //pin.title = "【徒歩で移動中】時速" + time
+            }
+            //pin.title = "Hello"
             pin.subtitle = String(speed)
+            //pin.subtitle = "Hello"
             mapView.addAnnotation(pin)
             // mapViewにcircleを追加.
             // 現在地を拡大して表示する
@@ -127,7 +335,9 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
         let coordinate_line = [old_coordinates!,new_coordinates!]
         let myPolyLine: MKPolyline = MKPolyline(coordinates: coordinate_line, count: coordinate_line.count)
         mapView.addOverlay(myPolyLine)
+
         //描画終わり
+        
         // 測位の精度を指定(最高精度)
         //    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         //    // 位置情報取得間隔を指定(100m移動したら、位置情報を通知)
