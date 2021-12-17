@@ -10,7 +10,8 @@ import UIKit
 class MessageViewController: UIViewController, UITextFieldDelegate {
     
     var messageViews: [UITextView]? = []
-    
+    var prevPinch: CGFloat = 1
+    let pinchGesture = UIPinchGestureRecognizer()
     
     @IBOutlet weak var addTextButton: UIButton!
     
@@ -18,21 +19,45 @@ class MessageViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         addTextButton.setTitle("addText", for: .normal)
-
-        // Do any additional setup after loading the view.
+        
+        
+        pinchGesture.addTarget(self, action: #selector(pinchAction(_:)))
     }
+    
+    
+    @objc func pinchAction(_ gesture: UIPinchGestureRecognizer) {
+        if messageViews!.count > 0 {
+            print("pinchUp")
+            let rate = gesture.scale - 1 + prevPinch
+            
+            self.messageViews![messageViews!.count - 1].transform = CGAffineTransform(scaleX: rate, y: rate)
+            
+            if (gesture.state == .ended) {
+                prevPinch = rate
+            }
+        }
+    }
+    
+    
     
     @IBAction func TappedAddTextButton(_ sender: Any) {
         
         let unitWidth = view.frame.width
         let unitHeight = view.frame.height
         
-        let messageView: UITextView = UITextView(frame: CGRect(x: unitWidth/2, y: unitHeight/2, width: 50.0, height: 50.0))
+        let messageView: UITextView = UITextView(frame: CGRect(x: unitWidth/2, y: unitHeight/2, width: 100.0, height: 70.0))
         messageView.keyboardType = UIKeyboardType.default
-        messageView.layer.borderWidth = 5
+        messageView.layer.borderWidth = 1
         messageView.layer.borderColor = UIColor.lightGray.cgColor
         messageViews?.append(messageView)
         self.view.addSubview(messageView)
+        self.messageViews![messageViews!.count - 1].addGestureRecognizer(pinchGesture)
+        
+        if messageViews!.count >= 2 {
+            messageViews![messageViews!.count - 2].layer.borderWidth = 0
+        }
+        
+        prevPinch = 1
         print("作ったよ")
     }
     
@@ -43,16 +68,16 @@ class MessageViewController: UIViewController, UITextFieldDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        if let messageFieldsArray = messageViews {
+        if messageViews!.count > 0 {
             print("tochesBegan")
-            let messageArrayNumber = messageFieldsArray.count - 1
+            let messageArrayNumber = messageViews!.count - 1
             
             // Labelアニメーション.
-            UIView.animate(withDuration: 0.06,
-                                       // アニメーション中の処理.
+            UITextView.animate(withDuration: 0.06,
+                    // アニメーション中の処理.
                 animations: { () -> Void in
                     // 縮小用アフィン行列を作成する.
-                self.messageViews![messageArrayNumber].transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+                self.messageViews![messageArrayNumber].transform = CGAffineTransform(scaleX: (self.prevPinch * 0.9), y: (self.prevPinch * 0.9))
                 })
             { (Bool) -> Void in
             }
@@ -61,10 +86,10 @@ class MessageViewController: UIViewController, UITextFieldDelegate {
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        if let messageFieldsArray = messageViews {
-            print("touchsMoved")
+        if messageViews!.count > 0 {
+            //print("touchsMoved")
             
-            let messageArrayNumber = messageFieldsArray.count - 1
+            let messageArrayNumber = messageViews!.count - 1
             
             let aTouch: UITouch = touches.first!
             
@@ -81,31 +106,30 @@ class MessageViewController: UIViewController, UITextFieldDelegate {
             myFrame.origin.y += deltaY
             
             self.messageViews![messageArrayNumber].frame = myFrame
-                
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
 
         
-        if let messageFieldsArray = messageViews {
+        if messageViews!.count > 0 {
             print("touchesEnd")
-            
-            let messageArrayNumber = messageFieldsArray.count - 1
+            /*
+            let messageArrayNumber = messageViews!.count - 1
             
             // Labelアニメーション.
-            UIView.animate(withDuration: 0.1,
-
+            UITextView.animate(withDuration: 0.1,
+                
                 // アニメーション中の処理.
                 animations: { () -> Void in
                     // 拡大用アフィン行列を作成する.
-                    self.messageViews![messageArrayNumber].transform = CGAffineTransform(scaleX: 0.4, y: 0.4)
+                self.messageViews![messageArrayNumber].transform = CGAffineTransform(scaleX: (self.prevPinch * 0.4), y: (self.prevPinch * 0.4))
                     // 縮小用アフィン行列を作成する.
-                    self.messageViews![messageArrayNumber].transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+                self.messageViews![messageArrayNumber].transform = CGAffineTransform(scaleX: (self.prevPinch * 1.0), y: (self.prevPinch * 1.0))
                 })
             { (Bool) -> Void in
 
-            }
+            }*/
         }
     }
     

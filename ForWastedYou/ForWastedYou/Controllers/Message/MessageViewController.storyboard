@@ -26,10 +26,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIh-bR-hrw" userLabel="borderView">
-                                <rect key="frame" x="2" y="243" width="410" height="410"/>
+                                <rect key="frame" x="0.0" y="241" width="414" height="414"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wWT-bK-nFg" userLabel="shikishiView">
-                                        <rect key="frame" x="5" y="5" width="400" height="400"/>
+                                        <rect key="frame" x="5" y="5" width="404" height="404"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </view>
                                 </subviews>
@@ -55,13 +55,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="W0h-Ab-pfc" secondAttribute="bottom" constant="15" id="4g5-xw-Eqd"/>
-                            <constraint firstItem="yIh-bR-hrw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="2" id="6BK-AM-C9W"/>
+                            <constraint firstItem="yIh-bR-hrw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="6BK-AM-C9W"/>
                             <constraint firstItem="a6f-wX-s6L" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="Fym-XR-Awt"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="a6f-wX-s6L" secondAttribute="bottom" constant="15" id="G2h-8r-mdb"/>
                             <constraint firstItem="yIh-bR-hrw" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="KsB-q6-VvM"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="W0h-Ab-pfc" secondAttribute="trailing" constant="15" id="fLI-Cs-Xmt"/>
                             <constraint firstItem="yIh-bR-hrw" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="n9Y-5m-A0c"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="yIh-bR-hrw" secondAttribute="trailing" constant="2" id="wFZ-GG-26W"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="yIh-bR-hrw" secondAttribute="trailing" id="wFZ-GG-26W"/>
                         </constraints>
                     </view>
                     <connections>
