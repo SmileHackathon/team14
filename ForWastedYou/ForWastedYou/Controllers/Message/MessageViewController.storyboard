@@ -17,14 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6f-wX-s6L">
-                                <rect key="frame" x="15" y="816" width="67" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <action selector="TappedAddTextButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bTH-9w-mOk"/>
-                                </connections>
-                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_bar_title" translatesAutoresizingMaskIntoConstraints="NO" id="clM-sp-fid">
+                                <rect key="frame" x="0.0" y="-16" width="414" height="927"/>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yIh-bR-hrw" userLabel="borderView">
                                 <rect key="frame" x="0.0" y="241" width="414" height="414"/>
                                 <subviews>
@@ -50,15 +45,27 @@
                                     <action selector="tappedDebugButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4gu-8y-6HC"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a6f-wX-s6L">
+                                <rect key="frame" x="15" y="816" width="67" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="TappedAddTextButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bTH-9w-mOk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="W0h-Ab-pfc" secondAttribute="bottom" constant="15" id="4g5-xw-Eqd"/>
                             <constraint firstItem="yIh-bR-hrw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="6BK-AM-C9W"/>
+                            <constraint firstItem="clM-sp-fid" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="-60" id="9Pq-c2-H5T"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="clM-sp-fid" secondAttribute="bottom" constant="-49" id="Fvt-0B-UWM"/>
                             <constraint firstItem="a6f-wX-s6L" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="Fym-XR-Awt"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="a6f-wX-s6L" secondAttribute="bottom" constant="15" id="G2h-8r-mdb"/>
+                            <constraint firstItem="clM-sp-fid" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="IzE-Lh-mJS"/>
                             <constraint firstItem="yIh-bR-hrw" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="KsB-q6-VvM"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="clM-sp-fid" secondAttribute="trailing" id="LTh-qQ-aZp"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="W0h-Ab-pfc" secondAttribute="trailing" constant="15" id="fLI-Cs-Xmt"/>
                             <constraint firstItem="yIh-bR-hrw" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="n9Y-5m-A0c"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="yIh-bR-hrw" secondAttribute="trailing" id="wFZ-GG-26W"/>
@@ -74,6 +81,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="background_bar_title" width="572" height="1242"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
