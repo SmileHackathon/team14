@@ -23,8 +23,6 @@
 		387F4B45276B20A100A41154 /* TopViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 387F4B44276B20A100A41154 /* TopViewController.storyboard */; };
 		5083B57E276601B300B6D121 /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5083B57D276601B300B6D121 /* MapViewController.storyboard */; };
 		5083B5852767786500B6D121 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5083B5842767786500B6D121 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		50D92662276CC88800FC40E0 /* girl.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D92661276CC88800FC40E0 /* girl.png */; };
-		50D92664276CCE0E00FC40E0 /* girl2.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D92663276CCE0E00FC40E0 /* girl2.png */; };
 		50D92666276CCFF300FC40E0 /* girl3.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D92665276CCFF300FC40E0 /* girl3.png */; };
 /* End PBXBuildFile section */
 
@@ -66,8 +64,6 @@
 		387F4B44276B20A100A41154 /* TopViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TopViewController.storyboard; sourceTree = "<group>"; };
 		5083B57D276601B300B6D121 /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
 		5083B5842767786500B6D121 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		50D92661276CC88800FC40E0 /* girl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = girl.png; sourceTree = "<group>"; };
-		50D92663276CCE0E00FC40E0 /* girl2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = girl2.png; sourceTree = "<group>"; };
 		50D92665276CCFF300FC40E0 /* girl3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = girl3.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,8 +180,6 @@
 			children = (
 				38698B762765F12100A72E83 /* MapViewController.swift */,
 				5083B57D276601B300B6D121 /* MapViewController.storyboard */,
-				50D92661276CC88800FC40E0 /* girl.png */,
-				50D92663276CCE0E00FC40E0 /* girl2.png */,
 				50D92665276CCFF300FC40E0 /* girl3.png */,
 			);
 			path = Map;
@@ -307,8 +301,6 @@
 				50D92666276CCFF300FC40E0 /* girl3.png in Resources */,
 				5083B57E276601B300B6D121 /* MapViewController.storyboard in Resources */,
 				38698B4D2765EFDC00A72E83 /* LaunchScreen.storyboard in Resources */,
-				50D92662276CC88800FC40E0 /* girl.png in Resources */,
-				50D92664276CCE0E00FC40E0 /* girl2.png in Resources */,
 				38698B4A2765EFDC00A72E83 /* Assets.xcassets in Resources */,
 				38698B482765EFDA00A72E83 /* Main.storyboard in Resources */,
 				387F4B45276B20A100A41154 /* TopViewController.storyboard in Resources */,
@@ -538,7 +530,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ForWastedYou20211215;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ForWastedYou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -571,7 +563,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ForWastedYou20211215;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ForWastedYou;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
