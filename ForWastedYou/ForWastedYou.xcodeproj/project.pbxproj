@@ -59,8 +59,8 @@
 		38698B742765F11400A72E83 /* TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		38698B762765F12100A72E83 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		38698B782765F13A00A72E83 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
-		387F4B42276B208C00A41154 /* MessageViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MessageViewController.storyboard; path = ../../../../../../team14/ForWastedYou/ForWastedYou/Controllers/Message/MessageViewController.storyboard; sourceTree = "<group>"; };
-		387F4B44276B20A100A41154 /* TopViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = TopViewController.storyboard; path = ../../../../../../team14/ForWastedYou/ForWastedYou/Controllers/Top/TopViewController.storyboard; sourceTree = "<group>"; };
+		387F4B42276B208C00A41154 /* MessageViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MessageViewController.storyboard; sourceTree = "<group>"; };
+		387F4B44276B20A100A41154 /* TopViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TopViewController.storyboard; sourceTree = "<group>"; };
 		5083B57D276601B300B6D121 /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
 		5083B5842767786500B6D121 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -42,14 +42,24 @@
                                     <constraint firstItem="wWT-bK-nFg" firstAttribute="leading" secondItem="yIh-bR-hrw" secondAttribute="leading" constant="5" id="pBn-AL-gqG"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W0h-Ab-pfc">
+                                <rect key="frame" x="303.5" y="816" width="95.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="デバッグ用"/>
+                                <connections>
+                                    <action selector="tappedDebugButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4gu-8y-6HC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="W0h-Ab-pfc" secondAttribute="bottom" constant="15" id="4g5-xw-Eqd"/>
                             <constraint firstItem="yIh-bR-hrw" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="2" id="6BK-AM-C9W"/>
                             <constraint firstItem="a6f-wX-s6L" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="Fym-XR-Awt"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="a6f-wX-s6L" secondAttribute="bottom" constant="15" id="G2h-8r-mdb"/>
                             <constraint firstItem="yIh-bR-hrw" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="KsB-q6-VvM"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="W0h-Ab-pfc" secondAttribute="trailing" constant="15" id="fLI-Cs-Xmt"/>
                             <constraint firstItem="yIh-bR-hrw" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="n9Y-5m-A0c"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="yIh-bR-hrw" secondAttribute="trailing" constant="2" id="wFZ-GG-26W"/>
                         </constraints>
