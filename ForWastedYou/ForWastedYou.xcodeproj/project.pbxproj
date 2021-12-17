@@ -23,6 +23,7 @@
 		387F4B45276B20A100A41154 /* TopViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 387F4B44276B20A100A41154 /* TopViewController.storyboard */; };
 		5083B57E276601B300B6D121 /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5083B57D276601B300B6D121 /* MapViewController.storyboard */; };
 		5083B5852767786500B6D121 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5083B5842767786500B6D121 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		50D92666276CCFF300FC40E0 /* girl3.png in Resources */ = {isa = PBXBuildFile; fileRef = 50D92665276CCFF300FC40E0 /* girl3.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		387F4B44276B20A100A41154 /* TopViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TopViewController.storyboard; sourceTree = "<group>"; };
 		5083B57D276601B300B6D121 /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
 		5083B5842767786500B6D121 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		50D92665276CCFF300FC40E0 /* girl3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = girl3.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 			children = (
 				38698B762765F12100A72E83 /* MapViewController.swift */,
 				5083B57D276601B300B6D121 /* MapViewController.storyboard */,
+				50D92665276CCFF300FC40E0 /* girl3.png */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				387F4B43276B208C00A41154 /* MessageViewController.storyboard in Resources */,
+				50D92666276CCFF300FC40E0 /* girl3.png in Resources */,
 				5083B57E276601B300B6D121 /* MapViewController.storyboard in Resources */,
 				38698B4D2765EFDC00A72E83 /* LaunchScreen.storyboard in Resources */,
 				38698B4A2765EFDC00A72E83 /* Assets.xcassets in Resources */,
@@ -508,7 +512,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5JW9RR8FC8;
+				DEVELOPMENT_TEAM = K32N5V38J5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ForWastedYou/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "";
@@ -541,7 +545,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5JW9RR8FC8;
+				DEVELOPMENT_TEAM = K32N5V38J5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ForWastedYou/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "";
