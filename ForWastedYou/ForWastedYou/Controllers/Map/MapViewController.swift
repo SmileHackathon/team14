@@ -35,7 +35,7 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
     //飲んでいた位置文字列の定義
     var startpoint : String = ""
     
-    var dateformatter=DateFormatter()
+    var date=DateFormatter()
     let text = [ "緯度", "経度", "国名", "郵便番号", "都道府県", "郡", "市区町村", "丁番なしの地名", "地名", "番地" ]
     let geocoder = CLGeocoder()
     var location: [ UILabel ] = []
@@ -152,23 +152,24 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
             locationManager.distanceFilter = 5
             // 位置情報の取得を開始
             locationManager.startUpdatingLocation()
+            let time = DateFormatter.localizedString(from: locationManager.location!.timestamp, dateStyle: .short, timeStyle: .short)
             my_latitude = locationManager.location?.coordinate.latitude
             my_longitude = locationManager.location?.coordinate.longitude
             
             let span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
             // 東京駅の位置情報をセット
             let myposition = CLLocationCoordinate2DMake(my_latitude, my_longitude)
-            // centerに東京駅のlocationDataをセット
-            let region = MKCoordinateRegion(center: myposition, span: span)
-            mapView.setRegion(region, animated: true)
-            
+          
             
             let pin = MKPointAnnotation()
             pin.coordinate = myposition
+            pin.title = "これから飲み始めます！" + time
             mapView.addAnnotation(pin)
             
+            let region = MKCoordinateRegion(center: myposition, span: span)
+            mapView.setRegion(region, animated: true)
 
-            coordinates.append(CLLocationCoordinate2D(latitude: my_latitude, longitude: my_longitude))
+            coordinates.append(myposition)
             
             
             self.view.addSubview(imageSample)
@@ -195,13 +196,13 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
             print("無効なデータ")
             return
         }
-        let time = dateformatter.string(from: newLocation.timestamp)
+        let time = DateFormatter.localizedString(from: newLocation.timestamp, dateStyle: .short, timeStyle: .short)
         print("時間time")
         print(time)
         //瞬間速度m/s
         let speed = newLocation.speed
         //時速
-        let hspeed = round(speed * 3.6)
+        let hspeed = round(speed * 3.6*100)/100
         //タクシーか徒歩かの判断
         var booltax = 0
         if hspeed > 20{
@@ -291,7 +292,7 @@ class MapViewController: UIViewController , CLLocationManagerDelegate, MKMapView
                 //pin.title = "【徒歩で移動中】時速" + time
             }
             //pin.title = "Hello"
-            pin.subtitle = String(speed)
+//            pin.subtitle = String(speed)
             //pin.subtitle = "Hello"
             mapView.addAnnotation(pin)
             // mapViewにcircleを追加.
