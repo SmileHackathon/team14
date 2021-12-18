@@ -11,17 +11,18 @@ class MessageViewController: UIViewController, UITextFieldDelegate {
     
     var messageViews: [UITextView]? = []
     var prevPinch: CGFloat = 1
+    var name: String?
     let pinchGesture = UIPinchGestureRecognizer()
-    
-    @IBOutlet weak var addTextButton: UIButton!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addTextButton.setTitle("addText", for: .normal)
-        
-        
         pinchGesture.addTarget(self, action: #selector(pinchAction(_:)))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     
